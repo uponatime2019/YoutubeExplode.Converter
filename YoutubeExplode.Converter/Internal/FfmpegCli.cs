@@ -35,9 +35,11 @@ namespace YoutubeExplode.Converter.Internal
             if (!transcode)
                 args.Add("-c copy");
 
+            //args.Add("libx264");
+
             // Optimize mp4 transcoding
             if (transcode && string.Equals(format, "mp4", StringComparison.OrdinalIgnoreCase))
-                args.Add("-preset ultrafast");
+                args.Add("-preset veryfast");
 
             // Set max threads
             args.Add($"-threads {Environment.ProcessorCount}");
